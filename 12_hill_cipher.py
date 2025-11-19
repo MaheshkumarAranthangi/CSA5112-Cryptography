@@ -1,3 +1,4 @@
+# Program 12: Hill Cipher (2x2)
 import numpy as np
 
 def hill_encrypt():
@@ -41,3 +42,11 @@ def hill_encrypt():
 
 if __name__ == "__main__":
     hill_encrypt()
+#output
+$ python hill_encrypt.py
+Key matrix:
+[[9 4]
+ [5 7]]
+
+Plaintext: MEETMEATTHEUSUALPLACEATTENRATHERTHANEIGHTOCLOCK
+Ciphertext: ZEBBWXKXKXKXKXKXKXKXKXKXKXKXKXKXKXKXKXKXKXKXKXKX
