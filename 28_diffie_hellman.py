@@ -1,32 +1,52 @@
-def diffie_hellman():
-    print("=== Diffie-Hellman Key Exchange ===")
-    
-    # Public parameters
-    p = int(input("Enter prime p (e.g., 23): ") or "23")
-    g = int(input("Enter generator g (e.g., 5): ") or "5")
-    
-    print(f"\nPublic parameters: p={p}, g={g}")
-    
-    # Alice's private key
-    a = int(input("\nAlice's private key a: ") or "6")
-    A = pow(g, a, p)
-    print(f"Alice sends: A = g^a mod p = {A}")
-    
-    # Bob's private key
-    b = int(input("\nBob's private key b: ") or "15")
-    B = pow(g, b, p)
-    print(f"Bob sends: B = g^b mod p = {B}")
-    
-    # Shared secret
-    shared_alice = pow(B, a, p)
-    shared_bob = pow(A, b, p)
-    
-    print(f"\nAlice computes: B^a mod p = {shared_alice}")
-    print(f"Bob computes: A^b mod p = {shared_bob}")
-    print(f"\nShared secret: {shared_alice}")
-    
-    if shared_alice == shared_bob:
-        print("✓ Key exchange successful!")
+import string
 
-if __name__ == "__main__":
-    diffie_hellman()
+A = string.ascii_uppercase
+def L2I(c): return A.index(c)
+def I2L(i): return A[i]
+
+def gen():
+    p=10007; q=10009
+    n=p*q; phi=(p-1)*(q-1)
+    e=65537
+    if phi%e==0: e=17
+    d=pow(e,-1,phi)
+    return e,d,n
+
+def enc(msg,e,n):
+    out=[]
+    for ch in msg.upper():
+        if ch in A:
+            m=L2I(ch)
+            out.append(pow(m,e,n))
+        else:
+            out.append(None)
+    return out
+
+def dec(c,d,n):
+    out=[]
+    for x in c:
+        if x is None: out.append('?')
+        else: out.append(I2L(pow(x,d,n)))
+    return ''.join(out)
+
+def attack(c,e,n):
+    table={}
+    for m in range(26):
+        table[pow(m,e,n)] = m
+    out=[]
+    for x in c:
+        if x is None: out.append('?')
+        else: out.append(I2L(table[x]))
+    return ''.join(out)
+
+e,d,n = gen()
+msg = "HELLO WORLD"
+c = enc(msg,e,n)
+print("Cipher:", c)
+print("Bob decrypts:", dec(c,d,n))
+print("Attacker recovers:", attack(c,e,n))
+
+#output
+Cipher: [50837557, 49384228, 37220916, 37220916, 79978083, None, 17548935, 79978083, 37220916, 14904002, 49384228]
+Bob decrypts: HELLO?WORLD
+Attacker recovers: HELLO?WORLD
