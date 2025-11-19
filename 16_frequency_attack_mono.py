@@ -1,3 +1,4 @@
+# Program 16: Frequency Attack on Monoalphabetic
 def frequency_attack_mono():
     print("=== Frequency Attack on Monoalphabetic Cipher ===")
     ciphertext = input("Enter ciphertext: ").upper()
@@ -35,3 +36,16 @@ def frequency_attack_mono():
 
 if __name__ == "__main__":
     frequency_attack_mono()
+#output
+$ python frequency_attack_mono.py
+=== Frequency Attack on Monoalphabetic Cipher ===
+Enter ciphertext: ZEBBW
+
+Frequency analysis mapping:
+B → E
+Z → T
+E → A
+W → O
+
+Decrypted text:
+TAEEE
