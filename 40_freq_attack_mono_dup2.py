@@ -26,3 +26,23 @@ def frequency_attack_mono():
 
 if __name__ == "__main__":
     frequency_attack_mono()
+
+OUTPUT
+Enter ciphertext: 
+Top 10 frequency mappings:
+R → E
+A → T
+M → A
+Decrypted text (top 1 result):
+ETA
+
+
+
+
+
+
+
+
+
+
+
