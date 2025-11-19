@@ -21,3 +21,21 @@ def frequency_attack_additive():
 
 if __name__ == "__main__":
     frequency_attack_additive()
+OUTPUT
+=== Frequency Attack on Additive Cipher ===
+Enter ciphertext: KEY
+Top N results (default 10): 3
+
+Top 3 possibilities:
+
+1. Shift 0:
+KEY
+
+2. Shift 1:
+JDX
+
+3. Shift 2:
+ICW
+```
+
+
