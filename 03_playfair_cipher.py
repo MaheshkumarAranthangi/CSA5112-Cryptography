@@ -1,3 +1,5 @@
+
+# Program 3: Playfair Cipher
 def create_matrix(key):
     key = key.upper().replace('J', 'I')
     key = ''.join(dict.fromkeys(key))
@@ -45,3 +47,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+#output
+Key: PLAYFAIREXAMPLE
+Plaintext: HIDETHEGOLDINTHETREESTUMP
+Ciphertext: BMODZBXDNABEKUDMUIXMMOUVIF
+Decrypted (raw): HIDETHEGOLDINTHETREESTUMPX
