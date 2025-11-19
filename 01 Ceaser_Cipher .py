@@ -26,3 +26,16 @@ def main():
 
 if __name__ == "__main__":
     main()
+    Output
+    === Caesar Cipher ===
+Enter 'e' for encrypt or 'd' for decrypt: e
+Enter text: HELLO WORLD
+Enter shift value (1-25): 3
+Encrypted: KHOOR ZRUOG
+=== Caesar Cipher ===
+Enter 'e' for encrypt or 'd' for decrypt: d
+Enter text: KHOOR ZRUOG
+Enter shift value (1-25): 3
+Decrypted: HELLO WORLD
+
+
