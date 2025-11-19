@@ -1,3 +1,4 @@
+# Program 5: Affine Caesar Cipher
 def gcd(a, b):
     while b:
         a, b = b, a % b
@@ -47,3 +48,14 @@ def main():
 
 if __name__ == "__main__":
     main()
+#output
+Encrypting using Affine Cipher...
+Plaintext: HELLO
+Keys: a = 5, b = 8
+Encrypted Text: RCLLA
+
+$ python affine_cipher.py --decrypt --text "RCLLA" --a 5 --b 8
+Decrypting using Affine Cipher...
+Ciphertext: RCLLA
+Keys: a = 5, b = 8
+Decrypted Text: HELLO
