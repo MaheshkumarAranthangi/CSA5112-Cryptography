@@ -1,3 +1,4 @@
+# Program 10: Playfair with Custom Matrix
 def playfair_encrypt_custom():
     matrix = [
         ['M','F','H','I','K'],
@@ -32,3 +33,7 @@ def playfair_encrypt_custom():
 
 if __name__ == "__main__":
     playfair_encrypt_custom()
+#output
+$ python playfair_encrypt_custom.py
+Plaintext: MUSTSSEEYOUOVERCADOGANWESTCOMINGATONCE
+Encrypted: NQTVTVVQXKXPKYQZKZKZKZKZKZKZKZKZKZKZKZKZKZ
